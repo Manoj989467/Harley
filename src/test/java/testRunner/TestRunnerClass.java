@@ -14,7 +14,7 @@ import java.io.IOException;
 @CucumberOptions(dryRun = true, plugin = {"pretty", "html:target//report.html"}, glue = {"stepdefinition"},
         features = "src\\test\\resources\\Features\\Login.feature", tags = ("@LoginWithOTP"))
 public class TestRunnerClass extends BaseClass {
-
+    @AfterClass
     public static void report() throws FileNotFoundException, IOException {
 
         ReportingClass.htmlReport(getpropertypath() + getpropertyfilevalue("html"));
