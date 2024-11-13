@@ -1,4 +1,4 @@
-package BaseClass;
+package baseClass;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -17,6 +17,7 @@ public class BaseClass {
     public static WebDriver driver;
 
     public void launchDriver() {
+
         driver = new ChromeDriver();
     }
 
@@ -31,8 +32,8 @@ public class BaseClass {
     }
 
     public static String getpropertypath() {
-        return System.getProperty("user.dir");
 
+        return System.getProperty("user.dir");
     }
 
     RequestSpecification reqspec;
@@ -44,6 +45,7 @@ public class BaseClass {
     }
 
     public void addHeader(String key, String value) {
+
         reqspec = RestAssured.given().header(key, value);
 
     }

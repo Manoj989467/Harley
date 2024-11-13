@@ -1,6 +1,6 @@
-package PayaloadManager;
+package payloadManager;
 
-import LoginPayLoad.Login_PayLoad;
+import loginPayLoad.Login_PayLoad;
 
 public class PayloadManager {
 

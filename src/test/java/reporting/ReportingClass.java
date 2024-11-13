@@ -1,9 +1,11 @@
-package Reporting;
+package reporting;
 
 import net.masterthought.cucumber.ReportBuilder;
 
 import java.io.File;
+
 import net.masterthought.cucumber.Configuration;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +15,7 @@ public class ReportingClass {
 
         File file = new File("C:\\Users\\Welcome\\IdeaProjects\\Harley\\target");
 
-        Configuration config = new Configuration(file,"Harley");
+        Configuration config = new Configuration(file, "Harley");
         config.addClassifications("browser", "Chrome");
         config.addClassifications("browser version", "1.2");
         config.addClassifications("os", "windows 11");
@@ -25,5 +27,4 @@ public class ReportingClass {
         build.generateReports();
 
     }
-
 }

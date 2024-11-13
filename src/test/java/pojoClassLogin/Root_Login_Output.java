@@ -1,4 +1,4 @@
-package PojoClassLogin;
+package pojoClassLogin;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
