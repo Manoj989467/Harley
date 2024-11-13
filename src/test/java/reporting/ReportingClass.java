@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ReportingClass {
 
-    public static void jvmReport(String htmlfile) {
+    public static void htmlReport(String htmlfile) {
 
         File file = new File("C:\\Users\\Welcome\\IdeaProjects\\Harley\\target");
 
