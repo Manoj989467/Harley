@@ -17,7 +17,7 @@ public class TestRunnerClass extends BaseClass {
 
     public static void report() throws FileNotFoundException, IOException {
 
-        ReportingClass.jvmReport(getpropertypath() + getpropertyfilevalue("html"));
+        ReportingClass.htmlReport(getpropertypath() + getpropertyfilevalue("html"));
 
     }
 }
