@@ -1,6 +1,7 @@
 package testRunner;
 
 import baseClass.BaseClass;
+import org.junit.AfterClass;
 import reporting.ReportingClass;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -14,10 +15,11 @@ import java.io.IOException;
 @CucumberOptions(dryRun = true, plugin = {"pretty", "html:target//report.html"}, glue = {"stepdefinition"},
         features = "src\\test\\resources\\Features\\Login.feature", tags = ("@LoginWithOTP"))
 public class TestRunnerClass extends BaseClass {
-
+@AfterClass
     public static void report() throws FileNotFoundException, IOException {
 
-        ReportingClass.jvmReport(getpropertypath() + getpropertyfilevalue("html"));
+        ReportingClass.htmlReport(getpropertypath() + getpropertyfilevalue("html"));
 
     }
 }
+

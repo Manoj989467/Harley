@@ -8,24 +8,22 @@ import java.util.Properties;
 import io.restassured.RestAssured;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseClass {
 
+    RequestSpecification reqspec;
+    Response response;
+
     public static WebDriver driver;
-
-    public void launchDriver() {
-
-        driver = new ChromeDriver();
-    }
-
 
     public static String getpropertyfilevalue(String key) throws FileNotFoundException, IOException {
 
         Properties properties = new Properties();
-        properties.load(new FileInputStream(getpropertypath() + "\\PropertyFile\\config.properties"));
+        properties.load(new FileInputStream("src\\test\\PropertyFile\\config.properties"));
         Object object = properties.get(key);
         return (String) object;
 
@@ -35,9 +33,6 @@ public class BaseClass {
 
         return System.getProperty("user.dir");
     }
-
-    RequestSpecification reqspec;
-    Response response;
 
     public void addHeaders(Headers headers) {
         reqspec = RestAssured.given().headers(headers);
@@ -50,15 +45,14 @@ public class BaseClass {
 
     }
 
+    public void addReqBody(Object body) {
 
-    public void addReqBody1(Object body) {
-
-        reqspec.body(body);
+        reqspec = reqspec.body(body);
     }
 
     public void addReqBody(String body) {
 
-        reqspec.body(body);
+        reqspec = reqspec.body(body);
     }
 
     public Response addReqType(String Type, String endpoint) {
@@ -90,25 +84,27 @@ public class BaseClass {
         return response;
     }
 
-    public int getResponseCode(Response response) {
+    public int getResponseCode() {
         return response.getStatusCode();
 
     }
 
+    public ResponseBody getbody() {
+        return response.getBody();
+    }
+
     public String getResBodyAsString() {
 
-        return response.asString();
+        return response.getBody().asString();
     }
 
     public String getResBodyAsPrettyString() {
 
-        return response.asPrettyString();
+        return response.getBody().asPrettyString();
     }
-
 
     public RequestSpecification addBasicAuth(String userid, String Password) {
 
         return reqspec.auth().preemptive().basic(userid, Password);
     }
-
 }

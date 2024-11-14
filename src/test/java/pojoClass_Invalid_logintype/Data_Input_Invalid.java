@@ -1,16 +1,17 @@
-package pojoClassLogin;
-
+package pojoClass_Invalid_logintype;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-@AllArgsConstructor
+
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
-public class Data_Login_Input {
+public class Data_Input_Invalid {
 
     public String loginId;
     public String loginType;
     public String notificationType;
+
 
 }
