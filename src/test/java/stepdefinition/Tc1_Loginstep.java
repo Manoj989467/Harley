@@ -60,7 +60,6 @@ public class Tc1_Loginstep extends BaseClass {
 
         addReqType(string, Endpoints.LOGIN);
 
-
     }
 
     @Then("Validate response with Message {string}, Status code {int} ,Success {string}, errorCode {int} and error description {string}")

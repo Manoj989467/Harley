@@ -64,7 +64,7 @@ public class BaseClass {
                 break;
             }
             case "POST": {
-                response = reqspec.post(endpoint);
+                response = reqspec.log().all().post(endpoint);
                 break;
             }
             case "PUT": {

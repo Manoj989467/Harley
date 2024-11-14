@@ -1,4 +1,5 @@
-package pojoClass_Invalid_logintype;
+package pojoClass_ExternalLogin;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,12 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Data_Invalid_input_Output {
+public class Root_ExternalLogin_Output {
+
 
     public boolean success;
-    public int errorCode;
-    public String errorDescription;
     public String message;
-
+    public Data_ExternalLogin_Output data;
 
 }
