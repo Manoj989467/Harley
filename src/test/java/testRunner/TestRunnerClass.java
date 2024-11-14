@@ -1,25 +1,18 @@
 package testRunner;
 
 import baseClass.BaseClass;
-import org.junit.AfterClass;
-import reporting.ReportingClass;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(dryRun = true, plugin = {"pretty", "html:target//report.html"}, glue = {"stepdefinition"},
-        features = "src\\test\\resources\\Features\\Login.feature", tags = ("@LoginWithOTP"))
+@CucumberOptions(dryRun = false, plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}, glue = {"stepdefinition"},
+        features = "src\\test\\resources\\Features\\Login.feature", tags = ("@SpecialChar"))
 public class TestRunnerClass extends BaseClass {
-@AfterClass
-    public static void report() throws FileNotFoundException, IOException {
 
-        ReportingClass.htmlReport(getpropertypath() + getpropertyfilevalue("html"));
 
-    }
+
 }
 
